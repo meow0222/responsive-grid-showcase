@@ -4,11 +4,9 @@
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
-<<<<<<< HEAD
-=======
 
 body {
-    background-color: rgb(50, 50, 50);
+    background-color: #1e2335;
 }
 
 nav {
@@ -26,7 +24,7 @@ menu ul {
 }
 
 menu li {
-    display: inline;
+    display: flex;
     align-items: center;
     cursor: pointer;
     display: inline-block;
@@ -35,12 +33,19 @@ menu li {
 }
 
 menu li:hover {
-    color: rgb(200, 200, 200);
+    animation: menu 0.5s forwards;
 }
 
-
-
-menu li:hover {
-    color: rgb(200, 200, 200);
+menu li:not(:hover) {
+    animation: unem 0.5s forwards;
 }
->>>>>>> home-page
+
+@keyframes menu {
+    from {color: rgb(160, 160, 160);}
+    to {color: white;}
+}
+
+@keyframes unem {
+    from {color: white;}
+    to {color: rgb(160, 160, 160);}
+}
