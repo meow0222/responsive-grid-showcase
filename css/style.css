@@ -24,11 +24,19 @@ menu ul {
 }
 
 menu li {
+    display: inline;
+    align-items: center;
     cursor: pointer;
     display: inline-block;
     font-weight: bold;
     color: rgb(160, 160, 160);
 }
+
+menu li:hover {
+    color: rgb(200, 200, 200);
+}
+
+
 
 menu li:hover {
     color: rgb(200, 200, 200);
