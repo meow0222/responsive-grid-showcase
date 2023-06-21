@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
 }
 
 body {
@@ -24,20 +25,25 @@ menu ul {
 }
 
 menu li {
-    display: flex;
+    display: inline-block;
     align-items: center;
     cursor: pointer;
-    display: inline-block;
     font-weight: bold;
-    color: rgb(160, 160, 160);
+    color: hsl(0, 0%, 63%);
 }
 
-menu li:hover {
+menu a:hover {
     animation: menu 0.5s forwards;
 }
 
-menu li:not(:hover) {
+menu a:not(:hover) {
     animation: unem 0.5s forwards;
+}
+
+#logo {
+    position: absolute;
+    left: 0;
+    height: 80px;
 }
 
 @keyframes menu {
