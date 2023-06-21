@@ -40,8 +40,17 @@ menu a:not(:hover) {
     animation: unem 0.5s forwards;
 }
 
-.grid {
-    display: grid;
+.micon {
+    height: 30px;
+    margin-right: 2vw;
+}
+
+.micon:hover {
+    animation: icon 0.5s forwards;
+}
+
+.micon:not(:hover) {
+    animation: noci 0.5s forwards;
 }
 
 #logo {
@@ -57,23 +66,15 @@ menu a:not(:hover) {
 
 @keyframes unem {
     from {color: white;}
-    to {color: rgb(160, 160, 160);}
+    to {color: #a0a0a0;}
 }
 
-.col-1 {width: 25%;}
-.col-2 {width: 50%;}
-.col-3 {width: 75%;}
-.col-4 {width: 100%;}
-
-[class*="col-"] {
-  float: left;
-  padding: 15px;
-  border: 1px solid red;
+@keyframes icon {
+    from {filter: invert(68%) sepia(2%) saturate(170%) hue-rotate(54deg) brightness(95%) contrast(85%);}
+    to {filter: invert(98%) sepia(100%) saturate(0%) hue-rotate(10deg) brightness(102%) contrast(105%);}
 }
 
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
+@keyframes noci {
+    from {filter: invert(98%) sepia(100%) saturate(0%) hue-rotate(10deg) brightness(102%) contrast(105%);}
+    to {filter: invert(68%) sepia(2%) saturate(170%) hue-rotate(54deg) brightness(95%) contrast(85%);}
 }
-
