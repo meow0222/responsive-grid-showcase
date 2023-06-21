@@ -12,21 +12,10 @@ body {
 
 nav {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80px;
     background-color: rgb(30, 30, 50);
 }
 
-menu ul {
-    display: flex;
-    justify-content: space-between;
-    width: 200px;
-}
-
 menu li {
-    display: inline-block;
-    align-items: center;
     cursor: pointer;
     font-weight: bold;
     color: hsl(0, 0%, 63%);
@@ -57,6 +46,7 @@ menu a:not(:hover) {
     position: absolute;
     left: 0;
     height: 80px;
+    margin-right: 20px;
 }
 
 @keyframes menu {
@@ -77,4 +67,14 @@ menu a:not(:hover) {
 @keyframes noci {
     from {filter: invert(98%) sepia(100%) saturate(0%) hue-rotate(10deg) brightness(102%) contrast(105%);}
     to {filter: invert(68%) sepia(2%) saturate(170%) hue-rotate(54deg) brightness(95%) contrast(85%);}
+}
+
+@media only screen and (max-width: 600px) {
+    menu li {display: block;}
+    nav {justify-content: right; height: 110px; align-items: flex-end;}
+}
+
+@media only screen and (min-width: 601px) {
+    menu li {display: inline-block;}
+    nav {justify-content:flex-end; height: 80px; align-items: center;}
 }
