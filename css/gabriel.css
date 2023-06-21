@@ -40,6 +40,10 @@ menu a:not(:hover) {
     animation: unem 0.5s forwards;
 }
 
+.grid {
+    display: grid;
+}
+
 #logo {
     position: absolute;
     left: 0;
@@ -55,3 +59,21 @@ menu a:not(:hover) {
     from {color: white;}
     to {color: rgb(160, 160, 160);}
 }
+
+.col-1 {width: 25%;}
+.col-2 {width: 50%;}
+.col-3 {width: 75%;}
+.col-4 {width: 100%;}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+  border: 1px solid red;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
