@@ -1,0 +1,173 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #1E2335;
+    color: #fff;
+}
+
+/* -----------------------------------------WEAPONS SECITON--------------------------------------------- */
+
+.weapons-title {
+    display: flex;
+    column-gap: 1rem;
+    margin: 5rem auto 3rem auto;
+    width: min(90%, 75rem);
+    font-size: 1rem;
+}
+
+.weapons-title img {
+    width: 2rem;
+}
+
+/* FOR GRID */
+.weapons-area {
+    display: grid;
+    grid-template-areas: 
+    'one'
+    'two'
+    'three'
+    'four'
+    'five'
+    'six';
+    grid-auto-columns: 1fr;
+    gap: 2rem;
+    margin: 3rem auto;
+    width: min(90%,75rem);
+}
+
+.weapon {
+    text-align: center;
+}
+
+.weapon:nth-child(1) {
+    grid-area: one;
+}
+
+.weapon:nth-child(2) {
+    grid-area: two;
+}
+
+.weapon:nth-child(3) {
+    grid-area: three;
+}
+
+.weapon:nth-child(4) {
+    grid-area: four;
+}
+
+.weapon:nth-child(5) {
+    grid-area: five;
+}
+
+.weapon:nth-child(6) {
+    grid-area: six;
+}
+
+/* FOR iPAD */
+@media (min-width: 600px){
+    .weapons-area {
+        grid-template-areas:
+        'one one two'
+        'one one three'
+        'four five six';
+    }
+}
+
+/* FOR DESKTOP */
+@media (min-width: 768px){
+    .weapons-area {
+        grid-template-areas: 
+        'one one two three'
+        'one one six six'
+        'four five six six'
+
+    }
+}
+
+.weapons-area img {
+    width: 60%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    filter: drop-shadow(0 0 1rem #fff);
+}
+
+.weapons-area img:hover {
+    filter: drop-shadow(0 0 0.75rem #0044ff);
+    transform: scale(1.15);
+    transition: transform 0.6s ease;
+}
+
+.weapons-area h2 {
+    padding-bottom: 1rem;
+    font-size: 20px;
+}
+
+/*  
+.weapons-area a {
+    padding: 1rem;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    border: 0.5px solid #333;
+    border-radius: 6px;
+    z-index: 1;
+    transition: .3s ease-in;
+}*/
+
+
+/* -----------------------------------------FOOTER SECITON--------------------------------------------- */
+
+.footer-container {
+    background-color: rgb(40, 40, 40)
+}
+
+.footer-logo {
+    text-align: center;
+    padding: 2rem;
+}
+
+.footer-links, .footer-sm{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-logo img {
+    width: 200px;
+}
+
+.footer-links {
+    column-gap: 2rem;
+    margin-bottom: 2rem;
+    list-style-type: none;
+}
+
+.footer-links a {
+    color: rgb(160, 160, 160);
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    font-weight: bold;
+    color: #fff;
+}
+
+.footer-sm {
+    column-gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.footer-sm img{
+    width: 2rem;
+}
+
+.footer-sm :hover{
+    transform: translateY(-5px);
+    transition: .3s;
+}
