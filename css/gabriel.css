@@ -10,6 +10,67 @@ body {
     background-color: #1e2335;
 }
 
+main {
+    display: grid;
+    align-items: center;
+    margin: auto;
+    padding: 50px;
+    gap: 50px;
+}
+
+[class*="item"] {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    float: left;
+}
+
+.mainimg {
+    width: 15em;
+    margin: auto;
+}
+
+.mainimg:hover {
+    animation: mitem 0.5s forwards;
+}
+
+.mainimg:not(:hover) {
+    animation: metim 0.5s forwards;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    height: 100px;
+}
+
+.title img {
+    width: 18em;
+}
+
+.cases {
+    display: grid;
+    align-items: center;
+    margin: auto;
+    padding: 50px;
+    gap: 30px;
+    max-width: 100%;
+}
+
+.case {
+    width: 10em;
+}
+
+/*------------------------- nav -------------------------*/
+
 nav {
     display: flex;
     background-color: rgb(30, 30, 50);
@@ -29,40 +90,11 @@ menu a:not(:hover) {
     animation: unem 0.5s forwards;
 }
 
-main {
-    display: grid;
-    align-items: center;
-    margin: auto;
-    padding: 10vw;
-    gap: 50px;
-    padding: 20px;
-}
-
-[class*="item"] {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    float: left;
-    font-size: x-large;
-}
-
-.mainimg {
-    width: 8em;
-    margin: auto;
-}
-
-.mainimg:hover {
-    animation: mitem 0.5s forwards;
-}
-
-.mainimg:not(:hover) {
-    animation: metim 0.5s forwards;
-}
-
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
+#logo {
+    position: absolute;
+    left: 0;
+    height: 80px;
+    margin-right: 20px;
 }
 
 .micon {
@@ -78,19 +110,17 @@ main {
     animation: noci 0.5s forwards;
 }
 
-.title {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
-    height: 100px;
+@keyframes icon {
+    from {filter: invert(68%) sepia(2%) saturate(170%) hue-rotate(54deg) brightness(95%) contrast(85%);}
+    to {filter: invert(98%) sepia(100%) saturate(0%) hue-rotate(10deg) brightness(102%) contrast(105%);}
 }
 
-.title img {
-    width: 18em;
+@keyframes noci {
+    from {filter: invert(98%) sepia(100%) saturate(0%) hue-rotate(10deg) brightness(102%) contrast(105%);}
+    to {filter: invert(68%) sepia(2%) saturate(170%) hue-rotate(54deg) brightness(95%) contrast(85%);}
 }
 
-/* ------------------------- footer -------------------------*/
+/*------------------------- footer -------------------------*/
 
 .footer-container {
     background-color: rgb(30, 30, 50);
@@ -145,33 +175,6 @@ main {
 
 /*-----------------------------------------------------------*/
 
-#logo {
-    position: absolute;
-    left: 0;
-    height: 80px;
-    margin-right: 20px;
-}
-
-@keyframes menu {
-    from {color: rgb(160, 160, 160);}
-    to {color: white;}
-}
-
-@keyframes unem {
-    from {color: white;}
-    to {color: #a0a0a0;}
-}
-
-@keyframes icon {
-    from {filter: invert(68%) sepia(2%) saturate(170%) hue-rotate(54deg) brightness(95%) contrast(85%);}
-    to {filter: invert(98%) sepia(100%) saturate(0%) hue-rotate(10deg) brightness(102%) contrast(105%);}
-}
-
-@keyframes noci {
-    from {filter: invert(98%) sepia(100%) saturate(0%) hue-rotate(10deg) brightness(102%) contrast(105%);}
-    to {filter: invert(68%) sepia(2%) saturate(170%) hue-rotate(54deg) brightness(95%) contrast(85%);}
-}
-
 @keyframes mitem {
     from {filter: drop-shadow();}
     to {filter: drop-shadow(0 0 2rem #011ffd); scale: 1.25;}
@@ -185,18 +188,23 @@ main {
 @media only screen and (max-width: 768px) {
     menu li {display: block;}
     nav {justify-content: right; height: 110px; align-items: flex-end;}
-    main {display: grid; grid-template-columns: auto;}
+    main {grid-template-columns: auto;}
+    .cases {grid-template-columns: auto;}
+    .item9 {display: none;}
 }
 
 @media only screen and (min-width: 769px) {
     menu li {display: inline-block;}
     nav {justify-content:flex-end; height: 80px; align-items: center;}
-    main {display: grid; grid-template-columns: auto auto auto;}
-    [class*="item"] {width: 100%;}
+    main {grid-template-columns: auto auto auto;}
+    .cases {grid-template-columns: auto auto auto auto;}
+
 }
 
 @media only screen and (min-width: 993px) {
     menu li {display: inline-block;}
     nav {justify-content:flex-end; height: 80px; align-items: center;}
     main {display: grid; grid-template-columns: auto auto auto auto;}
+    .cases {grid-template-columns: auto auto auto auto auto auto;}
+    .item9 {display: none;}
 }
