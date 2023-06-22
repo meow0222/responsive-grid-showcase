@@ -10,6 +10,77 @@ body {
     color: #fff;
 }
 
+/* -----------------------------------------NAV SECITON--------------------------------------------- */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    background-color: rgb(30, 30, 50);
+}
+
+menu ul {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+}
+
+menu li {
+    display: inline-block;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    color: hsl(0, 0%, 63%);
+}
+
+menu a:hover {
+    animation: menu 0.5s forwards;
+}
+
+menu a:not(:hover) {
+    animation: unem 0.5s forwards;
+}
+
+.micon {
+    height: 30px;
+    margin-right: 2vw;
+}
+
+.micon:hover {
+    animation: icon 0.5s forwards;
+}
+
+.micon:not(:hover) {
+    animation: noci 0.5s forwards;
+}
+
+#logo {
+    position: absolute;
+    left: 0;
+    height: 80px;
+}
+
+@keyframes menu {
+    from {color: rgb(160, 160, 160);}
+    to {color: white;}
+}
+
+@keyframes unem {
+    from {color: white;}
+    to {color: #a0a0a0;}
+}
+
+@keyframes icon {
+    from {filter: invert(68%) sepia(2%) saturate(170%) hue-rotate(54deg) brightness(95%) contrast(85%);}
+    to {filter: invert(98%) sepia(100%) saturate(0%) hue-rotate(10deg) brightness(102%) contrast(105%);}
+}
+
+@keyframes noci {
+    from {filter: invert(98%) sepia(100%) saturate(0%) hue-rotate(10deg) brightness(102%) contrast(105%);}
+    to {filter: invert(68%) sepia(2%) saturate(170%) hue-rotate(54deg) brightness(95%) contrast(85%);}
+}
+
+
 /* -----------------------------------------WEAPONS SECITON--------------------------------------------- */
 
 .weapons-title {
@@ -128,19 +199,6 @@ body {
     width: 8rem;
     text-decoration: none;
 }
-
-/*  
-.weapons-area a {
-    padding: 1rem;
-    color: #333;
-    font-weight: bold;
-    cursor: pointer;
-    border: 0.5px solid #333;
-    border-radius: 6px;
-    z-index: 1;
-    transition: .3s ease-in;
-}*/
-
 
 /* -----------------------------------------FOOTER SECITON--------------------------------------------- */
 
