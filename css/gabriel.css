@@ -60,26 +60,55 @@ main {
     display: grid;
     align-items: center;
     margin: auto;
-    padding: 50px;
-    gap: 30px;
+    padding: 20px;
+    gap: 10px;
     max-width: 100%;
 }
 
+.c1 p {
+    color: rgba(160, 160, 160, 1);
+    font-size: xx-large;
+    margin-top: -50px;
+}
+
+.c1 p:hover {
+    animation: casename 0.5s forwards;
+}
+
+@keyframes casename {
+    from {color: rgba(160, 160, 160, 0);}
+    to {color: rgba(160, 160, 160, 1);}
+}
+
 .case {
-    width: 10em;
+    width: 10rem;
+}
+
+.case:hover {
+    animation: mitem 0.5s forwards;
+}
+
+.case:not(:hover) {
+    animation: metim 0.5s forwards;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem;
 }
 
 /*------------------------- nav -------------------------*/
 
 nav {
     display: flex;
-    background-color: rgb(30, 30, 50);
+    background-color: #1e1e32;
 }
 
 menu li {
     cursor: pointer;
     font-weight: bold;
-    color: hsl(0, 0%, 63%);
+    color: #a1a1a1;
 }
 
 menu a:hover {
@@ -95,6 +124,7 @@ menu a:not(:hover) {
     left: 0;
     height: 80px;
     margin-right: 20px;
+    margin-left: 2rem;
 }
 
 .micon {
@@ -189,7 +219,7 @@ menu a:not(:hover) {
     menu li {display: block;}
     nav {justify-content: right; height: 110px; align-items: flex-end;}
     main {grid-template-columns: auto;}
-    .cases {grid-template-columns: auto;}
+    .cases {width: fit-content;}
     .item9 {display: none;}
 }
 
@@ -198,7 +228,13 @@ menu a:not(:hover) {
     nav {justify-content:flex-end; height: 80px; align-items: center;}
     main {grid-template-columns: auto auto auto;}
     .cases {grid-template-columns: auto auto auto auto;}
-
+    .c6 {
+        grid-row-start: 2;
+        grid-row-end: 4;
+        grid-column-start: 2;
+        grid-column-end: 4;
+    }
+    .c6 img {width: 25em;}
 }
 
 @media only screen and (min-width: 993px) {
@@ -207,4 +243,27 @@ menu a:not(:hover) {
     main {display: grid; grid-template-columns: auto auto auto auto;}
     .cases {grid-template-columns: auto auto auto auto auto auto;}
     .item9 {display: none;}
+    .c1 {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .c6 {
+        grid-row-start: 2;
+        grid-row-end: 4;
+        grid-column-start: 3;
+        grid-column-end: 5;
+    }
+    .c11 {
+        grid-row-start: 3;
+        grid-row-end: 5;
+        grid-column-start: 5;
+        grid-column-end: 7;
+    }
+
+    .c1 img {width: 25em;}
+    .c6 img {width: 25em;}
+    .c11 img {width: 25em;}
+
 }
