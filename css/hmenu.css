@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+html {
+    --b-w: 30px;
+    --b-h: 5px;
+    --a-s: 200ms ease-in-out;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .h-menu:before, .h-menu:after, .h-menu input {
+        content: "";
+        height: var(--b-h);
+        width: var(--b-w);
+        border-radius: 0px;
+        background-color: rgba(128, 128, 128);
+        transition: opacity var(--a-s), width var(--a-s), rotate var(--a-s), transform var(--a-s);
+        transform-origin: center;
+    }
+
+    .h-menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        gap: 4px;
+        top: 30px;
+        right: 30px;
+        z-index: 2;
+        cursor: pointer;
+    }
+
+    .h-menu:has(input:checked)::before {
+        transform: rotate(270deg);
+        width: 25px;
+        translate: 0 calc(var(--b-h) / -2);
+    }
+
+    .h-menu:has(input:checked)::after {
+        transform: rotate(-270deg);
+        width: 25px;
+        translate: 0 calc(var(--b-h) / 2);
+    }
+
+    .h-menu input {
+        appearance: none;
+        outline: none;
+        pointer-events: none;
+    }
+
+    .h-menu input:checked {
+        transform: rotate(270deg);
+        opacity: 0;
+    }
+
+    .sidebar {
+        transition: transform var(--a-s), opacity var(--a-s);
+        transform: translateY(-20%);
+        opacity: 0;
+        padding: 20px;
+        padding-bottom: 10px;
+        max-width: fit-content;
+        background-color: #1e1e32;
+        position: absolute;
+        right: 0;
+        top: 80px;
+        text-align: right;
+        pointer-events: none;
+        z-index: 2;
+    }
+
+    .h-menu:has(input:checked) + .sidebar {
+        transform: translateY(0);
+        opacity: 100%;
+        pointer-events: all;
+    }
+
+    .sidebar a {
+        color: antiquewhite;
+        text-decoration: none;
+        font-size: 1.5em;
+        font-weight: 700;
+    }
+
+    .hambutton p:hover {
+        background-color: rgba(128, 128, 128, 0.473)
+    }
+
+    .hambutton p {
+        margin-bottom: 10px;
+        width: fit-content;
+    }
+
+}
